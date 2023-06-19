@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo1gohedrq0w0"]
+
+[ext_resource type="Script" path="res://day-03/math-case.gd" id="1_7x0qg"]
+
+[node name="exec-script" type="Node2D"]
+script = ExtResource("1_7x0qg")
+tipo = "papel"
