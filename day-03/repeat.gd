@@ -12,3 +12,6 @@ func _ready():
 		
 	for n in lista:
 		print("World " + str(n))
+	
+	if lista.size() == 3:
+		print("Lista tem 3 elementos.")
