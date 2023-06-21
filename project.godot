@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="GDScript"
-run/main_scene="res://day-03/exec-script.tscn"
+run/main_scene="res://.day-03/exec-script.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
