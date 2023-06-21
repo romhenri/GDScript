@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://js7q6hro6wo5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggj11"]
+font_size = 24
+font_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[node name="Calculadora" type="Control"]
+layout_mode = 3
+anchor_right = 0.26
+anchor_bottom = 0.617
+offset_right = 0.47998
+offset_bottom = 0.18396
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Display" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 53.0
+offset_right = 119.0
+offset_bottom = 126.0
+grow_horizontal = 2
+color = Color(0.541176, 0.592157, 0.439216, 1)
+
+[node name="Label" type="Label" parent="Background/Display"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.919
+offset_left = 7.0
+offset_right = -10.0
+offset_bottom = 5.91299
+grow_horizontal = 2
+grow_vertical = 2
+text = "12 +23"
+label_settings = SubResource("LabelSettings_ggj11")
+horizontal_alignment = 2
+vertical_alignment = 1
