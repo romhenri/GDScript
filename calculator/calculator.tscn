@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://js7q6hro6wo5"]
+[gd_scene load_steps=3 format=3 uid="uid://js7q6hro6wo5"]
+
+[ext_resource type="Script" path="res://calculator/calculator.gd" id="1_2utdj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ggj11"]
 font_size = 24
@@ -12,6 +14,7 @@ offset_right = 0.47998
 offset_bottom = 0.18396
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2utdj")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,7 +47,123 @@ offset_right = -10.0
 offset_bottom = 5.91299
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.000399566
 text = "12 +23"
 label_settings = SubResource("LabelSettings_ggj11")
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113
+anchor_top = 0.375
+anchor_right = 0.897
+anchor_bottom = 0.91
+offset_left = 0.100002
+offset_top = 1.52588e-05
+offset_right = -0.0999756
+offset_bottom = 3.05176e-05
+columns = 4
+
+[node name="Button" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1
+"
+
+[node name="Button2" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "C"
+
+[node name="Button5" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1
+"
+
+[node name="Button6" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="Button7" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6
+"
+
+[node name="Button8" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+"
+
+[node name="Button9" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="Button10" type="Button" parent="Background/ButtonsContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="Button11" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[node name="Button12" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "-
+"
+
+[node name="Button13" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "*"
+
+[node name="Button14" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+
+[node name="Button15" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "/"
+
+[node name="Button16" type="Button" parent="Background/ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "="
+
+[connection signal="pressed" from="Background/ButtonsContainer/Button4" to="." method="on_button_Clear_pressed"]
