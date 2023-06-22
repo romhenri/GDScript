@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation: AnimationPlayer = get_node("Animation")
+@onready var texture: Sprite2D = get_node("Texture")
 @export var move_speed: float = 256.0
 
 func _physics_process(_delta: float) -> void:
@@ -26,8 +27,13 @@ func get_direction() -> Vector2:
 
 
 
-# MAnimation System #
+# Animation System #
 func animate() -> void:
+	if velocity.x < 0:
+		texture.flip_h = true
+	if velocity.x > 0:
+		texture.flip_h = false
+		
 	if velocity != Vector2.ZERO: # or Vector(0,0)
 		animation.play("run")
 		return
