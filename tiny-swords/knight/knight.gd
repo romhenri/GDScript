@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var texture: Sprite2D = get_node("Texture")
 
 @export var move_speed: float = 256.0
+@export var player_health: int = 100
+@export var player_damage: int = 15
 
 @onready var can_attack: bool = true
 
@@ -62,5 +64,13 @@ func attack_handler() -> void:
 
 # var attack: String = "attack"
 
-func _on_animation_animation_finished(attack: String):
+func _on_animation_finished(_attack: String):
 	can_attack = true
+
+
+func on_attack_area(body):
+	body.update_health(player_damage)
+	pass # Replace with function body.
+
+func update_health():
+	pass
