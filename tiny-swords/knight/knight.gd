@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var move_speed: float = 256.0
 
 func _physics_process(_delta: float) -> void:
+	print(can_attack)
+	
 	move()
 	animate()
 	attack_handler()
@@ -15,10 +17,9 @@ func _physics_process(_delta: float) -> void:
 func move() -> void:
 	if can_attack == false:
 		return
-	else:
-		continue
+	
 	var direction: Vector2 = get_direction()
-	print(direction)
+	# print(direction)
 	velocity = direction * move_speed
 	move_and_slide()
 	
@@ -36,8 +37,7 @@ func get_direction() -> Vector2:
 func animate() -> void:
 	if can_attack == false:
 		return
-	else:
-		continue
+	
 	if velocity.x < 0:
 		texture.flip_h = true
 	if velocity.x > 0:
@@ -49,12 +49,12 @@ func animate() -> void:
 	animation.play("idle")
 
 func attack_handler() -> void:
-	can_attack = false
 	
 	if Input.is_action_just_pressed("attack"):
+		can_attack = false
 		animation.play("attack")
 
-var attack: String = "attack"
+# var attack: String = "attack"
 
 func _on_animation_animation_finished(attack: String):
 	can_attack = true
