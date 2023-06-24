@@ -11,9 +11,12 @@ func _physics_process(_delta: float) -> void:
 	attack_handler()
 
 
-
 # Move System #
 func move() -> void:
+	if can_attack == false:
+		return
+	else:
+		continue
 	var direction: Vector2 = get_direction()
 	print(direction)
 	velocity = direction * move_speed
@@ -27,10 +30,14 @@ func get_direction() -> Vector2:
 	Input.get_axis("move_up", "move_down")
 	).normalized()
 
-
+#
 
 # Animation System #
 func animate() -> void:
+	if can_attack == false:
+		return
+	else:
+		continue
 	if velocity.x < 0:
 		texture.flip_h = true
 	if velocity.x > 0:
@@ -42,11 +49,12 @@ func animate() -> void:
 	animation.play("idle")
 
 func attack_handler() -> void:
+	can_attack = false
+	
 	if Input.is_action_just_pressed("attack"):
-		# can_attack = false
 		animation.play("attack")
 
 var attack: String = "attack"
 
-func _on_animation_finished(attack):
+func _on_animation_animation_finished(attack: String):
 	can_attack = true
