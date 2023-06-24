@@ -44,33 +44,6 @@ tracks/2/keys = {
 "values": [ExtResource("2_bkvpy")]
 }
 
-[sub_resource type="Animation" id="Animation_ix4a6"]
-resource_name = "atack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_bkvpy")]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(12, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 14, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
-}
-
 [sub_resource type="Animation" id="Animation_cvpci"]
 resource_name = "idle"
 length = 0.8
@@ -127,10 +100,37 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_ix4a6"]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bkvpy")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(12, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 14, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nkywu"]
 _data = {
 "RESET": SubResource("Animation_5p20v"),
-"atack": SubResource("Animation_ix4a6"),
+"attack": SubResource("Animation_ix4a6"),
 "idle": SubResource("Animation_cvpci"),
 "run": SubResource("Animation_rkig1")
 }
@@ -154,3 +154,5 @@ vframes = 3
 libraries = {
 "": SubResource("AnimationLibrary_nkywu")
 }
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

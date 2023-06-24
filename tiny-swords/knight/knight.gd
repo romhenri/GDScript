@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var texture: Sprite2D = get_node("Texture")
+@onready var can_attack: bool = true
 @export var move_speed: float = 256.0
 
 func _physics_process(_delta: float) -> void:
 	move()
 	animate()
+	attack_handler()
 
 
 
@@ -38,3 +40,13 @@ func animate() -> void:
 		animation.play("run")
 		return
 	animation.play("idle")
+
+func attack_handler() -> void:
+	if Input.is_action_just_pressed("attack"):
+		# can_attack = false
+		animation.play("attack")
+
+var attack: String = "attack"
+
+func _on_animation_finished(attack):
+	can_attack = true
