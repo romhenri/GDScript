@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6o6i05t72doe"]
+[gd_scene load_steps=10 format=3 uid="uid://6o6i05t72doe"]
 
 [ext_resource type="Script" path="res://tiny-swords/knight/knight.gd" id="1_qjant"]
 [ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://tiny-swords/assets/Factions/Knights/Warrior.png" id="2_bkvpy"]
@@ -135,6 +135,9 @@ _data = {
 "run": SubResource("Animation_rkig1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rawi"]
+size = Vector2(62.986, 112.718)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(32, 31)
 scale = Vector2(0.965751, 1.00262)
@@ -155,5 +158,15 @@ libraries = {
 "": SubResource("AnimationLibrary_nkywu")
 }
 
-[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, 13.75)
+scale = Vector2(1, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(55.486, -45.161)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_5rawi")
+debug_color = Color(0.819608, 0.337255, 0.282353, 0.12549)
+
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

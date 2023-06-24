@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+@onready var attack_area_collision: CollisionShape2D = get_node("AttackArea/Collision")
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var texture: Sprite2D = get_node("Texture")
-@onready var can_attack: bool = true
+
 @export var move_speed: float = 256.0
+
+@onready var can_attack: bool = true
 
 func _physics_process(_delta: float) -> void:
 	print(can_attack)
@@ -40,8 +43,11 @@ func animate() -> void:
 	
 	if velocity.x < 0:
 		texture.flip_h = true
+		attack_area_collision.position.x = -55.486
+		
 	if velocity.x > 0:
 		texture.flip_h = false
+		attack_area_collision.position.x = 55.486
 		
 	if velocity != Vector2.ZERO: # or Vector(0,0)
 		animation.play("run")
