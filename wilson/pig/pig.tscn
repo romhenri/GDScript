@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpp760ghhggm4"]
 
-[ext_resource type="Texture2D" uid="uid://doj5xvoqd20t4" path="res://maxwell/pig/PigBody.png" id="1_0bfro"]
-[ext_resource type="Texture2D" uid="uid://bf86cjymvr4jw" path="res://maxwell/pig/PigHead.png" id="2_om4dd"]
+[ext_resource type="Texture2D" uid="uid://doj5xvoqd20t4" path="res://wilson/pig/PigBody.png" id="1_0bfro"]
+[ext_resource type="Texture2D" uid="uid://bf86cjymvr4jw" path="res://wilson/pig/PigHead.png" id="2_om4dd"]
 
 [sub_resource type="Animation" id="Animation_0u42g"]
 length = 0.001

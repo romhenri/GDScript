@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://durad7fayflh4"]
 
-[ext_resource type="Texture2D" uid="uid://lia0b76turvm" path="res://maxwell/MaxSprites-1de3.png" id="1_g87r1"]
+[ext_resource type="Texture2D" uid="uid://lia0b76turvm" path="res://wilson/WilsonSprites-1de3.png" id="1_g87r1"]
 
 [sub_resource type="Animation" id="Animation_tg4w7"]
 length = 0.001
