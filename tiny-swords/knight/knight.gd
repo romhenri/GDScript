@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var can_attack: bool = true
 
 func _physics_process(_delta: float) -> void:
-	print(can_attack)
+	# print(can_attack)
 	
 	move()
 	animate()
@@ -67,10 +67,10 @@ func attack_handler() -> void:
 func _on_animation_finished(_attack: String):
 	can_attack = true
 
-
 func on_attack_area(body):
-	body.update_health(player_damage)
-	pass # Replace with function body.
-
+	print(body)
+	# body.update_health(player_damage)
 func update_health():
 	pass
+
+# Comenting...sadasd

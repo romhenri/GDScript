@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://juqddi80lmd6"]
+
+[ext_resource type="PackedScene" uid="uid://7lv2500no7eh" path="res://tiny-swords/goblin/goblin.tscn" id="1_4trk4"]
+[ext_resource type="PackedScene" uid="uid://6o6i05t72doe" path="res://tiny-swords/knight/knight.tscn" id="2_gxeac"]
+
+[node name="Level" type="Node2D"]
+position = Vector2(2, 20)
+
+[node name="knight" parent="." instance=ExtResource("2_gxeac")]
+position = Vector2(66, 132)
+
+[node name="goblin" parent="." instance=ExtResource("1_4trk4")]
+position = Vector2(848, 322)
