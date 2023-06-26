@@ -9,6 +9,8 @@ var player_ref: CharacterBody2D = null
 @export var distance_threshold: int = 60
 @export var enemy_move_speed: float = 192
 
+var is_attacking: bool = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	if player_ref == null:
@@ -33,6 +35,9 @@ func _physics_process(_delta):
 		animation.play('attack')
 		return
 	
+	if is_attacking == true:
+		return
+	
 	velocity = direction * enemy_move_speed
 	move_and_slide()
 	animate()
@@ -54,3 +59,17 @@ func _on_detection_area_body_exited(body):
 	player_ref = null
 	detect_area.debug_color = Color("ffdd1203")
 	print(body) # Replace with function body.
+
+var anim_name = "attack"
+
+# Lembre-se que os Signals retornam valores, nós não passamos valores a eles.
+
+func _on_animation_started(anim_name):
+	if anim_name == "attack":
+		print('Attack started')
+		is_attacking = true
+
+func _on_animatio_finished(anim_name):
+	if anim_name == "attack":
+		print('Attack started')
+		is_attacking = false

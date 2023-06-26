@@ -71,5 +71,3 @@ func on_attack_area(body):
 	# body.update_health(player_damage)
 func update_health():
 	pass
-
-# Comentingssasasasasasasasjjgjhfhgfhgfhassasasaa
