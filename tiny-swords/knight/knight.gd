@@ -42,14 +42,13 @@ func get_direction() -> Vector2:
 func animate() -> void:
 	if can_attack == false:
 		return
-	
-	if velocity.x < 0:
-		texture.flip_h = true
-		attack_area_collision.position.x = -55.486
 		
 	if velocity.x > 0:
 		texture.flip_h = false
-		attack_area_collision.position.x = 55.486
+		attack_area_collision.position.x = 55.486	
+	if velocity.x < 0:
+		texture.flip_h = true
+		attack_area_collision.position.x = -55.486
 		
 	if velocity != Vector2.ZERO: # or Vector(0,0)
 		animation.play("run")
