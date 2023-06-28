@@ -194,5 +194,7 @@ shape = SubResource("RectangleShape2D_5rawi")
 disabled = true
 debug_color = Color(0.819608, 0.337255, 0.282353, 0.12549)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="." method="on_attack_area"]

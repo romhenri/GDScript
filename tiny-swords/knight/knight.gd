@@ -10,6 +10,10 @@ extends CharacterBody2D
 
 @onready var can_attack: bool = true
 
+func _ready():
+	if Global.flip_mode == true:
+		texture.flip_v = true
+
 func _physics_process(_delta: float) -> void:
 	# print(can_attack)
 	
@@ -71,5 +75,3 @@ func on_attack_area(body):
 	# body.update_health(player_damage)
 func update_health():
 	pass
- 
- # dasddadasdasssasadssda adaqwqsasasada

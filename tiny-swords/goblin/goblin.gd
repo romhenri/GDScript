@@ -11,6 +11,11 @@ var player_ref: CharacterBody2D = null
 
 var is_attacking: bool = false
 
+# Global variables using the Autoload / Singleton system.
+func _ready():
+	if Global.flip_mode == true:
+		texture.flip_v = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	if player_ref == null:
@@ -41,9 +46,6 @@ func _physics_process(_delta):
 	velocity = direction * enemy_move_speed
 	move_and_slide()
 	animate()
-	
-	#if flip_mode == true:
-	#	texture.flip_v = true
 
 func animate():
 	if velocity != Vector2.ZERO:
