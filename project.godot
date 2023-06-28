@@ -15,6 +15,10 @@ run/main_scene="res://.day-03/exec-script.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalScript="*res://tiny-swords/script.gd"
+
 [input]
 
 move_up={

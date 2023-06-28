@@ -1,14 +1,181 @@
-[gd_scene load_steps=3 format=3 uid="uid://juqddi80lmd6"]
+[gd_scene load_steps=17 format=3 uid="uid://juqddi80lmd6"]
 
 [ext_resource type="PackedScene" uid="uid://7lv2500no7eh" path="res://tiny-swords/goblin/goblin.tscn" id="1_4trk4"]
+[ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png" id="1_40h05"]
 [ext_resource type="PackedScene" uid="uid://6o6i05t72doe" path="res://tiny-swords/knight/knight.tscn" id="2_gxeac"]
+[ext_resource type="Texture2D" uid="uid://b67j844ps6rra" path="res://tiny-swords/assets/Terrain/Decorations/Bush_01.png" id="4_0fypx"]
+[ext_resource type="Texture2D" uid="uid://c15todgyegbau" path="res://tiny-swords/assets/Terrain/Decorations/Bush_02.png" id="5_2j16x"]
+[ext_resource type="Texture2D" uid="uid://cx2ifefta3ix8" path="res://tiny-swords/assets/Terrain/Decorations/Bush_03.png" id="6_p5xdp"]
+[ext_resource type="Texture2D" uid="uid://ig886f273dom" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_03.png" id="7_4cac1"]
+[ext_resource type="Texture2D" uid="uid://l0dlbmtf0u0y" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_01.png" id="8_kpi13"]
+[ext_resource type="Texture2D" uid="uid://dfqvrp76hmdqd" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_02.png" id="9_olcur"]
+[ext_resource type="Texture2D" uid="uid://0f8evho0kt23" path="res://tiny-swords/assets/Terrain/Decorations/Tree.png" id="10_u4682"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh5rj"]
+texture = ExtResource("1_40h05")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wbc4a"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_uh5rj")
+
+[sub_resource type="Animation" id="Animation_vihis"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_27xw6"]
+resource_name = "idle"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33wl8"]
+_data = {
+"RESET": SubResource("Animation_vihis"),
+"idle": SubResource("Animation_27xw6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s3f7"]
+size = Vector2(68, 35)
 
 [node name="Level" type="Node2D"]
 position = Vector2(2, 20)
 
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Grass" type="TileMap" parent="Terrain"]
+tile_set = SubResource("TileSet_wbc4a")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 0, 0, 131072, 0, 1, 196608, 0, 1, 65537, 65536, 1, 131073, 65536, 1, 196609, 65536, 1, 262145, 65536, 1, 327681, 0, 1, 393217, 0, 1, 458753, 0, 2, 2, 65536, 0, 65538, 65536, 1, 131074, 65536, 1, 196610, 65536, 1, 262146, 65536, 1, 327682, 65536, 1, 393218, 65536, 1, 458754, 65536, 2, 3, 65536, 0, 65539, 65536, 1, 131075, 65536, 1, 196611, 65536, 1, 262147, 65536, 1, 327683, 65536, 1, 393219, 65536, 1, 458755, 65536, 1, 524291, 0, 2, 4, 65536, 0, 65540, 65536, 1, 131076, 65536, 1, 196612, 65536, 1, 262148, 65536, 1, 327684, 65536, 1, 393220, 65536, 1, 458756, 65536, 1, 524292, 65536, 2, 5, 65536, 0, 65541, 65536, 1, 131077, 65536, 1, 196613, 65536, 1, 262149, 65536, 1, 327685, 65536, 1, 393221, 65536, 1, 458757, 65536, 1, 524293, 65536, 2, 6, 65536, 0, 65542, 65536, 1, 131078, 65536, 1, 196614, 65536, 1, 262150, 65536, 1, 327686, 65536, 1, 393222, 65536, 1, 458758, 65536, 1, 524294, 65536, 1, 7, 65536, 0, 65543, 65536, 1, 131079, 65536, 1, 196615, 65536, 1, 262151, 65536, 1, 327687, 65536, 1, 393223, 65536, 1, 458759, 65536, 1, 524295, 65536, 1, 8, 65536, 0, 65544, 65536, 1, 131080, 65536, 1, 196616, 65536, 1, 262152, 65536, 1, 327688, 65536, 1, 393224, 65536, 1, 458760, 65536, 1, 524296, 65536, 1, 9, 65536, 0, 65545, 65536, 1, 131081, 65536, 1, 196617, 65536, 1, 262153, 65536, 1, 327689, 65536, 1, 393225, 65536, 1, 458761, 65536, 1, 524297, 65536, 1, 10, 65536, 0, 65546, 65536, 1, 131082, 65536, 1, 196618, 65536, 1, 262154, 65536, 1, 327690, 65536, 1, 393226, 65536, 1, 458762, 65536, 1, 524298, 65536, 1, 589834, 65536, 2, 11, 65536, 0, 65547, 65536, 1, 131083, 65536, 1, 196619, 65536, 1, 262155, 65536, 1, 327691, 65536, 1, 393227, 65536, 1, 458763, 65536, 1, 524299, 65536, 1, 589835, 65536, 2, 12, 65536, 0, 65548, 65536, 1, 131084, 65536, 1, 196620, 65536, 1, 262156, 65536, 1, 327692, 65536, 1, 393228, 65536, 1, 458764, 65536, 1, 524300, 65536, 1, 589836, 65536, 2, 13, 65536, 0, 65549, 65536, 1, 131085, 65536, 1, 196621, 65536, 1, 327693, 65536, 1, 393229, 65536, 1, 458765, 65536, 1, 524301, 65536, 1, 589837, 65536, 2, 14, 65536, 0, 65550, 65536, 1, 131086, 65536, 1, 196622, 65536, 1, 393230, 65536, 1, 458766, 65536, 1, 524302, 65536, 1, 589838, 65536, 2, 15, 131072, 0, 65551, 65536, 1, 131087, 65536, 1, 196623, 65536, 1, 262159, 65536, 1, 458767, 65536, 1, 524303, 65536, 1, 589839, 131072, 2, 131088, 65536, 1, 196624, 65536, 1, 262160, 65536, 1, 327696, 65536, 1, 393232, 65536, 1, 458768, 65536, 1, 524304, 131072, 2, 458769, 131072, 2, 262157, 65536, 1, 262158, 65536, 1, 327694, 65536, 1, 327695, 65536, 1, 393231, 65536, 1, 393233, 131072, 1, 327697, 131072, 1, 262161, 131072, 1, 196625, 131072, 1, 131089, 131072, 0, 589830, 0, 2, 589831, 65536, 2, 589832, 65536, 2, 589833, 65536, 2, 1, 0, 0, 262144, 0, 2, 65552, 131072, 0)
+
+[node name="Bush01" type="Sprite2D" parent="."]
+position = Vector2(159, 292)
+texture = ExtResource("4_0fypx")
+
+[node name="Bush02" type="Sprite2D" parent="."]
+position = Vector2(372, 116)
+texture = ExtResource("5_2j16x")
+
+[node name="Bush03" type="Sprite2D" parent="."]
+position = Vector2(906, 84)
+texture = ExtResource("6_p5xdp")
+
+[node name="Bush04" type="Sprite2D" parent="."]
+position = Vector2(350, 505)
+texture = ExtResource("5_2j16x")
+
+[node name="Bush05" type="Sprite2D" parent="."]
+position = Vector2(424, 518)
+texture = ExtResource("6_p5xdp")
+
+[node name="Bush06" type="Sprite2D" parent="."]
+position = Vector2(937, 557)
+texture = ExtResource("4_0fypx")
+
+[node name="Bush07" type="Sprite2D" parent="."]
+position = Vector2(832, 91)
+texture = ExtResource("4_0fypx")
+
+[node name="Mushroom03" type="Sprite2D" parent="."]
+position = Vector2(188, 323)
+texture = ExtResource("7_4cac1")
+
+[node name="Mushroom01" type="Sprite2D" parent="."]
+position = Vector2(629, 47)
+texture = ExtResource("8_kpi13")
+
+[node name="Mushroom02" type="Sprite2D" parent="."]
+position = Vector2(612, 565)
+texture = ExtResource("8_kpi13")
+
+[node name="Mushroom04" type="Sprite2D" parent="."]
+position = Vector2(622, 568)
+texture = ExtResource("8_kpi13")
+
+[node name="Mushroom05" type="Sprite2D" parent="."]
+position = Vector2(626, 550)
+texture = ExtResource("9_olcur")
+
 [node name="knight" parent="." instance=ExtResource("2_gxeac")]
-position = Vector2(66, 132)
+position = Vector2(159, 146)
 
 [node name="goblin" parent="." instance=ExtResource("1_4trk4")]
 position = Vector2(848, 322)
 enemy_move_speed = 196.0
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(1050, 130)
+texture = ExtResource("10_u4682")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tree2"]
+libraries = {
+"": SubResource("AnimationLibrary_33wl8")
+}
+
+[node name="Area2D" type="Area2D" parent="Tree2"]
+position = Vector2(-533, -25)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2/Area2D"]
+shape = SubResource("RectangleShape2D_2s3f7")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(515, 34)
+texture = ExtResource("10_u4682")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tree"]
+libraries = {
+"": SubResource("AnimationLibrary_33wl8")
+}
+
+[node name="Area2D" type="Area2D" parent="Tree"]
+position = Vector2(-531, 46)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tree/Area2D"]
+position = Vector2(1067, 120)
+shape = SubResource("RectangleShape2D_2s3f7")

@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	var direction: Vector2 = global_position.direction_to(player_ref.global_position)
 	var distance: float = global_position.distance_to(player_ref.global_position)
 	
-	print(direction)
+	# print(direction)
 	
 	if direction.x > 0:
 		texture.flip_h = false
@@ -41,6 +41,9 @@ func _physics_process(_delta):
 	velocity = direction * enemy_move_speed
 	move_and_slide()
 	animate()
+	
+	#if flip_mode == true:
+	#	texture.flip_v = true
 
 func animate():
 	if velocity != Vector2.ZERO:
