@@ -2,11 +2,14 @@ extends CharacterBody2D
 
 @onready var attack_area_collision: CollisionShape2D = get_node("AttackArea/Collision")
 @onready var animation: AnimationPlayer = get_node("Animation")
+@onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
+
+var value = 25
 
 @export var move_speed: float = 256.0
 @export var player_health: int = 100
-@export var player_damage: int = 15
+@export var player_damage: int = 20
 
 @onready var can_attack: bool = true
 @onready var can_die: bool = false
@@ -84,7 +87,7 @@ func _on_animation_finished(anim_name: String):
 
 func on_attack_area(body):
 	print(body)
-	# body.update_health(player_damage)
+	body.update_health(value)
 	
 func update_health(value: int) -> void:
 	player_health -= value
@@ -93,3 +96,5 @@ func update_health(value: int) -> void:
 		animation.play("death")
 		
 		attack_area_collision.set_deferred("disabled", true)
+		
+	aux_animation.play("hit")

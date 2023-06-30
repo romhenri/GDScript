@@ -2,9 +2,16 @@ extends CharacterBody2D
 
 var player_ref: CharacterBody2D = null
 
+const ATTACK_AREA: PackedScene = preload("res://tiny-swords/goblin/EnemyAttackArea.tscn")
+const OFFSET: Vector2 = Vector2(0, 31)
+
 @onready var detect_area: CollisionShape2D = get_node("DetectionArea/Detection")
 @onready var animation: AnimationPlayer = get_node("Animation")
+@onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
+
+var can_die : bool = false
+var health : int = 100
 
 @export var distance_threshold: int = 60
 @export var enemy_move_speed: float = 192
@@ -18,7 +25,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	if player_ref == null:
+	if can_die:
+		return
+	
+	if player_ref == null or player_ref.can_die:
 		velocity = Vector2.ZERO
 		animate()
 		return
@@ -37,6 +47,7 @@ func _physics_process(_delta):
 		texture.flip_h = true
 	
 	if distance < distance_threshold:
+		
 		animation.play('attack')
 		return
 	
@@ -46,6 +57,11 @@ func _physics_process(_delta):
 	velocity = direction * enemy_move_speed
 	move_and_slide()
 	animate()
+
+func spawn_attack_area():
+	var attack_area = ATTACK_AREA.instantiate()
+	# attack_area.position = position + OFFSET
+	add_child(attack_area)
 
 func animate():
 	if velocity != Vector2.ZERO:
@@ -78,3 +94,15 @@ func _on_animatio_finished(anim_name):
 	if anim_name == "attack":
 		print('Attack started')
 		is_attacking = false
+
+func update_health(value: int) -> void:
+	health -= value
+	
+	aux_animation.play("hit")
+	
+	if health <= 0:
+		can_die = true
+		animation.play("death")
+		#queue_free()
+		
+		#attack_area_collision.set_deferred("disabled", true)
