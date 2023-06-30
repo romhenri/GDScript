@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var player_damage: int = 15
 
 @onready var can_attack: bool = true
+@onready var can_die: bool = false
 
 func _ready():
 	if Global.flip_mode == true:
@@ -16,6 +17,13 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 	# print(can_attack)
+	
+	
+	if (
+		can_attack == false or can_die
+		):
+		return
+	
 	
 	move()
 	animate()
@@ -67,11 +75,21 @@ func attack_handler() -> void:
 
 # var attack: String = "attack"
 
-func _on_animation_finished(_attack: String):
-	can_attack = true
+func _on_animation_finished(anim_name: String):
+	match anim_name:
+		"attack":
+			can_attack = true
+		"death":
+			get_tree().reload_current_scene()
 
 func on_attack_area(body):
 	print(body)
 	# body.update_health(player_damage)
-func update_health():
-	pass
+	
+func update_health(value: int) -> void:
+	player_health -= value
+	if player_health <= 0:
+		can_die = true
+		animation.play("death")
+		
+		attack_area_collision.set_deferred("disabled", true)
