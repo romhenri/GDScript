@@ -80,9 +80,7 @@ func _on_detection_area_body_exited(body):
 	player_ref = null
 	detect_area.debug_color = Color("ffdd1203")
 	print(body) # Replace with function body.
-
-var anim_name = "attack"
-
+	
 # Lembre-se que os Signals retornam valores, nós não passamos valores a eles.
 
 func _on_animation_started(anim_name):
