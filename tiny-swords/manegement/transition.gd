@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var animation = get_node("Animation")
+@onready var animation: AnimationPlayer = get_node("Animation")
 
 var scene_path: String = ""
 var can_quit: bool = false
@@ -15,6 +15,7 @@ func fade_in(opt: bool = false) -> void:
 		return
 	animation.play("fade_in")
 	
+
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name ==  "fade_in":
 		

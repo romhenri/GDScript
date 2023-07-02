@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://0hvymr5vc5ab"]
+
+[ext_resource type="Texture2D" uid="uid://bkot55avh06sm" path="res://tiny-swords/assets/Terrain/Water/Foam.png" id="1_k0bvp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lokcd"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q73ht"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8psoi"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqa8u"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us7vy"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v7un"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf373"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooym3"]
+atlas = ExtResource("1_k0bvp")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrhoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lokcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q73ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8psoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqa8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us7vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v7un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf373")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooym3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Foam" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mrhoq")
+animation = &"idle"
+frame_progress = 0.57514
+offset = Vector2(64, 64)
