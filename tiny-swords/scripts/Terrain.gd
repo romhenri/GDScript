@@ -12,7 +12,7 @@ func _ready():
 	var used_grass_rect: Rect2 = grass_tilemap.get_used_rect()
 	grass_used_cells = grass_tilemap.get_used_cells(0)
 	generate_water_tiles(used_grass_rect)
-	# generate_foam_tiles()
+	generate_foam_tiles()
 	# print(grass_used_cells)
 
 func generate_water_tiles(used_rect: Rect2):
@@ -38,18 +38,18 @@ func generate_foam_tiles()-> void:
 func check_grass_neighbors(cell: Vector2i):
 	var left_neighbor: Vector2i = Vector2i(cell.x-1, cell.y)
 	var right_neighbor: Vector2i = Vector2i(cell.x+1, cell.y)
-	var top_neighbor: Vector2i = Vector2i(cell.x, cell.y+1)
-	var bottom_neighbor: Vector2i = Vector2i(cell.x, cell.y-1)
+	var top_neighbor: Vector2i = Vector2i(cell.x, cell.y-1)
+	var bottom_neighbor: Vector2i = Vector2i(cell.x, cell.y+1)
 
 	var neighbors_list: Array = [left_neighbor, right_neighbor, top_neighbor, bottom_neighbor]
 	
 	for neighbor in neighbors_list:
 		if  water_used_cells.has(neighbor):
 			return true
-		return false
+	return false
 
-#func spawn_foam(foam_cell: Vector2):
-	#var foam = FOAM.instantiate()
-	#add_child(foam)
+func spawn_foam(foam_cell: Vector2):
+	var foam = FOAM.instantiate()
+	add_child(foam)
 	
-	#foam.position = (foam_cell * 64.0) + Vector2(32,32)
+	foam.position = (foam_cell * 64.0) + Vector2(32,32)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://biegfve3y0th"]
 
-[ext_resource type="Script" path="res://tiny-swords/manegement/Terrain.gd" id="1_hqiyr"]
+[ext_resource type="Script" path="res://tiny-swords/scripts/Terrain.gd" id="1_hqiyr"]
 [ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png" id="2_cb1mm"]
 [ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://tiny-swords/assets/Terrain/Water/Water.png" id="3_dta4e"]
 

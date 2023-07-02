@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
 
-var value = 25
+var value: int = 25
 
 @export var move_speed: float = 256.0
 @export var player_health: int = 100
@@ -83,7 +83,7 @@ func _on_animation_finished(anim_name: String):
 		"attack":
 			can_attack = true
 		"death":
-			get_tree().reload_current_scene()
+			transition.fade_in()
 
 func on_attack_area(body):
 	print(body)

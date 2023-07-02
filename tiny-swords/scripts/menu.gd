@@ -11,7 +11,7 @@ func on_button_pressed(button_name: String) -> void:
 	match button_name:
 		"Start":
 			print("Start")
-			transition.scene_path = "res://tiny-swords/manegement/level.tscn"
+			transition.scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
 			transition.fade_in()
 			
 		"Quit":

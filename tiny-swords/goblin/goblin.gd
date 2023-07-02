@@ -5,6 +5,7 @@ var player_ref: CharacterBody2D = null
 const ATTACK_AREA: PackedScene = preload("res://tiny-swords/goblin/EnemyAttackArea.tscn")
 const OFFSET: Vector2 = Vector2(0, 31)
 
+@onready var collision: CollisionShape2D = get_node("Collision")
 @onready var detect_area: CollisionShape2D = get_node("DetectionArea/Detection")
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
@@ -85,12 +86,12 @@ func _on_detection_area_body_exited(body):
 
 func _on_animation_started(anim_name):
 	if anim_name == "attack":
-		print('Attack started')
+		# print('Attack started')
 		is_attacking = true
 
 func _on_animatio_finished(anim_name):
 	if anim_name == "attack":
-		print('Attack started')
+		# print('Attack started')
 		is_attacking = false
 
 func update_health(value: int) -> void:
@@ -103,4 +104,5 @@ func update_health(value: int) -> void:
 		animation.play("death")
 		#queue_free()
 		
-		#attack_area_collision.set_deferred("disabled", true)
+		detect_area.set_deferred("disabled", true)
+		collision.set_deferred("disabled", true)
