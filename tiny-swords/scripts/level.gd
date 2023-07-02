@@ -12,6 +12,7 @@ func _ready():
 func increase_kill_count() -> void:
 	kill_count += 1
 	
-	if kill_count == target_kill_count:
+	if kill_count >= target_kill_count:
+		print("Yes")
 		transition.scene_path = next_level_scene_path
 		transition.fade_in(true)

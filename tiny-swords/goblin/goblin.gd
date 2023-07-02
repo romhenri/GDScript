@@ -103,6 +103,6 @@ func update_health(value: int) -> void:
 		can_die = true
 		animation.play("death")
 		#queue_free()
-		
+		get_tree().call_group("level", "increase_kill_count")
 		detect_area.set_deferred("disabled", true)
 		collision.set_deferred("disabled", true)

@@ -128,10 +128,11 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_ystfv")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["level"]]
 position = Vector2(2, 20)
 script = ExtResource("1_mlfnu")
 target_kill_count = 1
+next_level_scene_path = "res://tiny-swords/manegement/levels/level_2.tscn"
 current_level_scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
 
 [node name="Terrain" type="Node2D" parent="."]
@@ -154,10 +155,5 @@ collision_mask = 6
 
 [node name="goblin" parent="." instance=ExtResource("6_0mq3o")]
 position = Vector2(848, 322)
-collision_mask = 5
-enemy_move_speed = 196.0
-
-[node name="goblin2" parent="." instance=ExtResource("6_0mq3o")]
-position = Vector2(-436, 352)
 collision_mask = 5
 enemy_move_speed = 196.0

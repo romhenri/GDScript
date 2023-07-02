@@ -96,5 +96,5 @@ func update_health(value: int) -> void:
 		animation.play("death")
 		
 		attack_area_collision.set_deferred("disabled", true)
-		
+		return
 	aux_animation.play("hit")

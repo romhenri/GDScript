@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://byaie553qg00c"]
+[gd_scene load_steps=3 format=3 uid="uid://o5c06akwoefx"]
 
-[node name="Level"]
+[ext_resource type="PackedScene" uid="uid://juqddi80lmd6" path="res://tiny-swords/manegement/levels/level_1.tscn" id="1_be7d0"]
+[ext_resource type="PackedScene" uid="uid://7lv2500no7eh" path="res://tiny-swords/goblin/goblin.tscn" id="1_stqa1"]
+
+[node name="Level" instance=ExtResource("1_be7d0")]
+scale = Vector2(0.992881, 1.12605)
+target_kill_count = 3
+next_level_scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
+current_level_scene_path = "res://tiny-swords/manegement/levels/level_2.tscn"
+
+[node name="goblin2" parent="." index="3" instance=ExtResource("1_stqa1")]
+position = Vector2(1000, 50)
+
+[node name="goblin3" parent="." index="4" instance=ExtResource("1_stqa1")]
+position = Vector2(250, 500)

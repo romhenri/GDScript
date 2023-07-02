@@ -15,10 +15,10 @@ func fade_in(opt: bool = false) -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name ==  "fade_in":
-		
 		if can_quit:
 			get_tree().change_scene_to_file(scene_path)
 			animation.play("fade_out")
+			return
 			
 		get_tree().change_scene_to_file(scene_path)
 		animation.play("fade_out")

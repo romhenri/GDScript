@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bww6jo7l7tau1"]
+[gd_scene load_steps=26 format=3 uid="uid://bww6jo7l7tau1"]
 
 [ext_resource type="Script" path="res://tiny-swords/scripts/menu.gd" id="1_33nuo"]
 [ext_resource type="Script" path="res://tiny-swords/scripts/Terrain.gd" id="2_d5jww"]
@@ -136,6 +136,12 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(4, 4)
+
+[sub_resource type="InputEventKey" id="InputEventKey_aqam0"]
+keycode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_ywy07"]
+events = [SubResource("InputEventKey_aqam0")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui7si"]
 size = Vector2(48, 23.5)
@@ -606,6 +612,7 @@ scale = Vector2(0.995108, 1.00557)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_heofy")
 theme_override_font_sizes/font_size = 21
+shortcut = SubResource("Shortcut_ywy07")
 text = "New Game"
 
 [node name="Load" type="Button" parent="VBoxContainer" groups=["btn"]]
