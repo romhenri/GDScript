@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GDScript"
-run/main_scene="res://.day-03/exec-script.tscn"
+run/main_scene="res://tiny-swords/manegement/menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://tiny-swords/Global.gd"
+transition_screen="*res://tiny-swords/manegement/transition_screen.gd"
 
 [input]
 
