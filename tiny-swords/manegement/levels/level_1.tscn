@@ -1,11 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://juqddi80lmd6"]
+[gd_scene load_steps=26 format=3 uid="uid://juqddi80lmd6"]
 
 [ext_resource type="Script" path="res://tiny-swords/scripts/level.gd" id="1_mlfnu"]
+[ext_resource type="PackedScene" uid="uid://nsug166ya87p" path="res://tiny-swords/manegement/tree.tscn" id="2_bav07"]
 [ext_resource type="Script" path="res://tiny-swords/scripts/Terrain.gd" id="2_ket7x"]
 [ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png" id="3_g7e37"]
 [ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://tiny-swords/assets/Terrain/Water/Water.png" id="4_j58w7"]
+[ext_resource type="Texture2D" uid="uid://b67j844ps6rra" path="res://tiny-swords/assets/Terrain/Decorations/Bush_01.png" id="5_6wpq4"]
 [ext_resource type="PackedScene" uid="uid://6o6i05t72doe" path="res://tiny-swords/knight/knight.tscn" id="5_djv0j"]
 [ext_resource type="PackedScene" uid="uid://7lv2500no7eh" path="res://tiny-swords/goblin/goblin.tscn" id="6_0mq3o"]
+[ext_resource type="Texture2D" uid="uid://c15todgyegbau" path="res://tiny-swords/assets/Terrain/Decorations/Bush_02.png" id="6_2kqsn"]
+[ext_resource type="PackedScene" uid="uid://7w2jutx1vw7j" path="res://tiny-swords/manegement/interface.tscn" id="7_65u1a"]
+[ext_resource type="Texture2D" uid="uid://cx2ifefta3ix8" path="res://tiny-swords/assets/Terrain/Decorations/Bush_03.png" id="7_hxwt8"]
+[ext_resource type="Texture2D" uid="uid://l0dlbmtf0u0y" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_01.png" id="8_cc56t"]
+[ext_resource type="Texture2D" uid="uid://dfqvrp76hmdqd" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_02.png" id="9_fi078"]
+[ext_resource type="Texture2D" uid="uid://ig886f273dom" path="res://tiny-swords/assets/Terrain/Decorations/Mushroom_03.png" id="10_1nabo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh5rj"]
 texture = ExtResource("3_g7e37")
@@ -128,12 +136,125 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_ystfv")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uysvs"]
+texture = ExtResource("5_6wpq4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lyya"]
+texture = ExtResource("6_2kqsn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf6qo"]
+texture = ExtResource("7_hxwt8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lkr7"]
+texture = ExtResource("8_cc56t")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srdow"]
+texture = ExtResource("9_fi078")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgfei"]
+texture = ExtResource("10_1nabo")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t7fmb"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_uysvs")
+sources/1 = SubResource("TileSetAtlasSource_0lyya")
+sources/2 = SubResource("TileSetAtlasSource_bf6qo")
+sources/3 = SubResource("TileSetAtlasSource_2lkr7")
+sources/4 = SubResource("TileSetAtlasSource_srdow")
+sources/5 = SubResource("TileSetAtlasSource_sgfei")
+
 [node name="Level" type="Node2D" groups=["level"]]
 position = Vector2(2, 20)
 script = ExtResource("1_mlfnu")
 target_kill_count = 1
 next_level_scene_path = "res://tiny-swords/manegement/levels/level_2.tscn"
 current_level_scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
+
+[node name="Decoration" type="Node2D" parent="."]
+
+[node name="Tree6" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(6216, -508)
+
+[node name="Tree5" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(6636, -412)
+
+[node name="Tree4" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(4977, -309)
+
+[node name="Tree7" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1490, -268)
+
+[node name="Tree3" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1659, -103)
+
+[node name="Tree2" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1155, -460)
+
+[node name="Tree" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(252, -364)
+
+[node name="Tree8" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1735, -19)
+
+[node name="Tree9" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(-332, -115)
+
+[node name="Tree10" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(-603, 115)
+
+[node name="Tree11" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(-500, 8)
+
+[node name="Tree12" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(-507, 226)
+
+[node name="Tree13" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(-617, 204)
+
+[node name="Tree14" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1445, 478)
+
+[node name="Tree15" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1588, 103)
+
+[node name="Tree16" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(1278, -199)
+
+[node name="Tree17" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(53, -312)
+
+[node name="Tree18" parent="Decoration" instance=ExtResource("2_bav07")]
+z_index = 3
+position = Vector2(520, -460)
 
 [node name="Terrain" type="Node2D" parent="."]
 script = ExtResource("2_ket7x")
@@ -149,6 +270,11 @@ z_index = -2
 tile_set = SubResource("TileSet_82tmh")
 format = 2
 
+[node name="Decoration" type="TileMap" parent="Terrain"]
+tile_set = SubResource("TileSet_t7fmb")
+format = 2
+layer_0/tile_data = PackedInt32Array(11, 2, 0, 12, 0, 0, 327682, 0, 0, 589836, 0, 0, 720898, 0, 0, 524279, 0, 0, 131063, 0, 0, -131074, 0, 0, -393208, 0, 0, -131050, 0, 0, -393197, 0, 0, 196635, 0, 0, 589847, 0, 0, 655382, 0, 0, 786449, 0, 0, 917508, 4, 0, 458755, 0, 0, 917504, 5, 0, 917500, 5, 0, 851960, 5, 0, 655352, 5, 0, 786431, 5, 0, 720892, 5, 0, 851973, 5, 0, -131053, 5, 0, -327678, 5, 0, 65553, 5, 0, 589845, 5, 0, 917497, 4, 0, 720888, 4, 0, 589818, 4, 0, 786432, 4, 0, 655362, 4, 0, 917507, 4, 0, 1048575, 4, 0, 851961, 4, 0, 720893, 4, 0, 786438, 4, 0, 720899, 4, 0, 720895, 4, 0, 655355, 4, 0, 589814, 4, 0, 655350, 4, 0, 983045, 4, 0, 983047, 4, 0, 983037, 4, 0, 983035, 4, 0, -7, 4, 0, -458736, 4, 0, 589834, 4, 0)
+
 [node name="knight" parent="." instance=ExtResource("5_djv0j")]
 position = Vector2(159, 146)
 collision_mask = 6
@@ -157,3 +283,5 @@ collision_mask = 6
 position = Vector2(848, 322)
 collision_mask = 5
 enemy_move_speed = 196.0
+
+[node name="Interface" parent="." instance=ExtResource("7_65u1a")]

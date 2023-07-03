@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://7w2jutx1vw7j"]
+
+[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://tiny-swords/assets/kurland.ttf" id="1_levey"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ax0qm"]
+font = ExtResource("1_levey")
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.929412)
+shadow_offset = Vector2(3, 1)
+
+[node name="Interface" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 151.0
+offset_bottom = 61.0
+text = "HP: 100"
+label_settings = SubResource("LabelSettings_ax0qm")

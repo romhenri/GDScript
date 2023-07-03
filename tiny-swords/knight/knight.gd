@@ -8,19 +8,23 @@ extends CharacterBody2D
 var value: int = 25
 
 @export var move_speed: float = 256.0
-@export var player_health: int = 100
 @export var player_damage: int = 20
-
+@export var player_health: int = 100
 @onready var can_attack: bool = true
 @onready var can_die: bool = false
 
 func _ready():
 	if Global.flip_mode == true:
 		texture.flip_v = true
+	
+	if transition.player_health != 0:
+		player_health = transition.player_health
+		return
+		
+	transition.player_health = player_health
 
 func _physics_process(_delta: float) -> void:
 	# print(can_attack)
-	
 	
 	if (
 		can_attack == false or can_die
@@ -84,6 +88,7 @@ func _on_animation_finished(anim_name: String):
 			can_attack = true
 		"death":
 			transition.fade_in()
+			transition.player_health = 0
 
 func on_attack_area(body):
 	print(body)
@@ -91,6 +96,10 @@ func on_attack_area(body):
 	
 func update_health(value: int) -> void:
 	player_health -= value
+	
+	transition.player_health = player_health
+	get_tree().call_group("level", "update_health", player_health)
+	
 	if player_health <= 0:
 		can_die = true
 		animation.play("death")

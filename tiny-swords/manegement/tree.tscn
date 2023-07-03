@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://nsug166ya87p"]
+
+[ext_resource type="Texture2D" uid="uid://0f8evho0kt23" path="res://tiny-swords/assets/Terrain/Decorations/Tree.png" id="1_cwx5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v1nt"]
+atlas = ExtResource("1_cwx5b")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uxt8"]
+atlas = ExtResource("1_cwx5b")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4noph"]
+atlas = ExtResource("1_cwx5b")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0fgr"]
+atlas = ExtResource("1_cwx5b")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0epl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v1nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uxt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4noph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0fgr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_x0epl")
+autoplay = "default"
+frame_progress = 0.539535

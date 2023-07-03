@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var interface: CanvasLayer = get_node("Interface")
+@onready var health_label:Label = interface.get_node("Label")
+
 var kill_count: int = 0
 
 @export var target_kill_count: int
@@ -8,6 +11,10 @@ var kill_count: int = 0
 
 func _ready():
 	transition.scene_path = current_level_scene_path
+	update_health(transition.player_health)
+
+func update_health(new_health:int) -> void:
+	health_label.text = "HP: " + str(transition.player_health)
 
 func increase_kill_count() -> void:
 	kill_count += 1

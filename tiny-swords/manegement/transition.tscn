@@ -58,6 +58,7 @@ _data = {
 script = ExtResource("1_x21cj")
 
 [node name="Rect" type="ColorRect" parent="."]
+z_index = 100
 offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
