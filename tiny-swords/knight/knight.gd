@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
+@onready var dust: GPUParticles2D = get_node("Dust")
 
 var value: int = 25
 
@@ -70,17 +71,20 @@ func animate() -> void:
 		attack_area_collision.position.x = -55.486
 		
 	if velocity != Vector2.ZERO: # or Vector(0,0)
+		dust.emitting = true
 		animation.play("run")
 		return
+	dust.emitting = false
 	animation.play("idle")
 
 func attack_handler() -> void:
 	
 	if Input.is_action_just_pressed("attack"):
+		dust.emitting = false
 		can_attack = false
 		animation.play("attack")
 
-# var attack: String = "attack"
+# var attack: String = "attack"aaa
 
 func _on_animation_finished(anim_name: String):
 	match anim_name:
