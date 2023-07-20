@@ -13,7 +13,7 @@ func _ready():
 	transition.scene_path = current_level_scene_path
 	update_health(transition.player_health)
 
-func update_health(new_health:int) -> void:
+func update_health(_new_health:int) -> void:
 	health_label.text = "HP: " + str(transition.player_health)
 
 func increase_kill_count() -> void:

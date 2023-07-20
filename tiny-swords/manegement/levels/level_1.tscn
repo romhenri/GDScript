@@ -257,6 +257,7 @@ z_index = 3
 position = Vector2(520, -460)
 
 [node name="Terrain" type="Node2D" parent="."]
+z_index = -2
 script = ExtResource("2_ket7x")
 
 [node name="Grass" type="TileMap" parent="Terrain"]
@@ -278,6 +279,7 @@ layer_0/tile_data = PackedInt32Array(11, 2, 0, 12, 0, 0, 327682, 0, 0, 589836, 0
 [node name="knight" parent="." instance=ExtResource("5_djv0j")]
 position = Vector2(159, 146)
 collision_mask = 6
+player_damage = 35
 
 [node name="goblin" parent="." instance=ExtResource("6_0mq3o")]
 position = Vector2(848, 322)

@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-var player_ref: CharacterBody2D = null
-
+const AUDIO_TEMPLATE: PackedScene = preload("res://tiny-swords/manegement/audio_template.tscn")
 const ATTACK_AREA: PackedScene = preload("res://tiny-swords/goblin/EnemyAttackArea.tscn")
 const OFFSET: Vector2 = Vector2(0, 31)
+
+var player_ref: CharacterBody2D = null
 
 @onready var collision: CollisionShape2D = get_node("Collision")
 @onready var detect_area: CollisionShape2D = get_node("DetectionArea/Detection")
@@ -16,6 +17,7 @@ var health : int = 100
 
 @export var distance_threshold: int = 60
 @export var enemy_move_speed: float = 192
+@export var enemy_damage: int = 20
 
 var is_attacking: bool = false
 
@@ -98,9 +100,30 @@ func update_health(value: int) -> void:
 	if health <= 0:
 		is_dead = true
 		animation.play("death")
-		#queue_free()
 		get_tree().call_group("level", "increase_kill_count")
 		detect_area.set_deferred("disabled", true)
 		collision.set_deferred("disabled", true)
-	
 	return
+
+func spawn_sfx(sfx_path: String) -> void:
+	var sfx = AUDIO_TEMPLATE.instantiate()
+	sfx.sfx_to_play = sfx_path
+	add_child(sfx)
+
+func _on_enemy_attack_area_body_entered(body):
+	print("Reconhecido")
+	body.update_health(enemy_damage)
+
+var body_on: bool = false
+
+func attack_sound():
+	if body_on:
+		spawn_sfx("res://tiny-swords/assets/sfx/11_human_damage_1.wav")
+	elif !body_on:
+		spawn_sfx("res://tiny-swords/assets/sfx/27_sword_miss_2.wav")
+
+func _on_possible_enemy_attack_area_body_entered(_body):
+	body_on = true
+
+func _on_possible_enemy_attack_area_body_exited(_body):
+	body_on = false

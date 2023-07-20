@@ -27,6 +27,9 @@ scale_curve = SubResource("CurveTexture_ft73n")
 color_ramp = SubResource("GradientTexture1D_cqqeh")
 
 [node name="Dust" type="GPUParticles2D"]
+z_index = -1
+z_as_relative = false
+y_sort_enabled = true
 emitting = false
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_07uq3")

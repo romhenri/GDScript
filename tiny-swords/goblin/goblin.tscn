@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7lv2500no7eh"]
+[gd_scene load_steps=16 format=3 uid="uid://7lv2500no7eh"]
 
 [ext_resource type="Texture2D" uid="uid://vrt15i8ngrj3" path="res://tiny-swords/assets/Factions/Goblins/Torch.png" id="1_v7idk"]
 [ext_resource type="Script" path="res://tiny-swords/goblin/goblin.gd" id="2_jxqmu"]
@@ -84,6 +84,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EnemyAttackArea/EnemyAttackAreaShape:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ftfid"]
 resource_name = "attack"
@@ -100,55 +112,67 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_v7idk")]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("Texture:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"spawn_attack_area"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Texture:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [7]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Texture:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [14, 15, 16, 17, 18, 19]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Texture:vframes")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Texture:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [3]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_sound"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EnemyAttackArea/EnemyAttackAreaShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_eivbe"]
@@ -391,7 +415,12 @@ _data = {
 "hit": SubResource("Animation_426cn")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0pr3"]
+radius = 80.0
+
 [node name="goblin" type="CharacterBody2D"]
+z_as_relative = false
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 255
 script = ExtResource("2_jxqmu")
@@ -407,6 +436,8 @@ position = Vector2(0, 30)
 shape = SubResource("RectangleShape2D_v716m")
 
 [node name="Texture" type="Sprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
 texture = ExtResource("1_v7idk")
 hframes = 7
 vframes = 3
@@ -422,7 +453,25 @@ libraries = {
 "": SubResource("AnimationLibrary_gqouw")
 }
 
+[node name="EnemyAttackArea" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="EnemyAttackAreaShape" type="CollisionShape2D" parent="EnemyAttackArea"]
+shape = SubResource("CircleShape2D_d0pr3")
+disabled = true
+debug_color = Color(0.933333, 0.235294, 0.25098, 0.0588235)
+
+[node name="PossibleEnemyAttackArea" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PossibleEnemyAttackArea"]
+shape = SubResource("CircleShape2D_d0pr3")
+debug_color = Color(0.933333, 0.235294, 0.25098, 0.0588235)
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="animation_finished" from="Animation" to="." method="_on_animatio_finished"]
 [connection signal="animation_started" from="Animation" to="." method="_on_animation_started"]
+[connection signal="body_entered" from="EnemyAttackArea" to="." method="_on_enemy_attack_area_body_entered"]
+[connection signal="body_entered" from="PossibleEnemyAttackArea" to="." method="_on_possible_enemy_attack_area_body_entered"]
+[connection signal="body_exited" from="PossibleEnemyAttackArea" to="." method="_on_possible_enemy_attack_area_body_exited"]

@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
+const AUDIO_TEMPLATE: PackedScene = preload("res://tiny-swords/manegement/audio_template.tscn")
+
 @onready var attack_area_collision: CollisionShape2D = get_node("AttackArea/Collision")
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
 @onready var dust: GPUParticles2D = get_node("Dust")
-
-var attack_damage: int = 25
 
 @export var move_speed: float = 256.0
 @export var player_damage: int = 20
@@ -84,8 +84,6 @@ func attack_handler() -> void:
 		can_attack = false
 		animation.play("attack")
 
-# var attack: String = "attack"aaa
-
 func _on_animation_finished(anim_name: String):
 	match anim_name:
 		"attack":
@@ -96,7 +94,7 @@ func _on_animation_finished(anim_name: String):
 
 func on_attack_area(body):
 	print(body)
-	body.update_health(attack_damage)
+	body.update_health(player_damage)
 	
 func update_health(value: int) -> void:
 	player_health -= value
@@ -111,3 +109,8 @@ func update_health(value: int) -> void:
 		attack_area_collision.set_deferred("disabled", true)
 		return
 	aux_animation.play("hit")
+
+func spawn_sfx(sfx_path: String) -> void:
+	var sfx = AUDIO_TEMPLATE.instantiate()
+	sfx.sfx_to_play = sfx_path
+	add_child(sfx)

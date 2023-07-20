@@ -9,5 +9,8 @@ target_kill_count = 3
 next_level_scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
 current_level_scene_path = "res://tiny-swords/manegement/levels/level_2.tscn"
 
+[node name="goblin" parent="." index="3"]
+position = Vector2(848.037, 211.358)
+
 [node name="goblin2" parent="." index="4" instance=ExtResource("1_stqa1")]
-position = Vector2(66.4732, 720.217)
+position = Vector2(450.205, 599.44)
