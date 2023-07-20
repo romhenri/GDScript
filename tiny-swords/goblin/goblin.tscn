@@ -426,19 +426,22 @@ collision_mask = 255
 script = ExtResource("2_jxqmu")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+z_as_relative = false
+position = Vector2(0, -35)
 
 [node name="Detection" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_amdb5")
 debug_color = Color(1, 0.866667, 0.0705882, 0.0117647)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 30)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_v716m")
 
 [node name="Texture" type="Sprite2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
 texture = ExtResource("1_v7idk")
+offset = Vector2(0, -35)
 hframes = 7
 vframes = 3
 frame = 1
@@ -454,6 +457,7 @@ libraries = {
 }
 
 [node name="EnemyAttackArea" type="Area2D" parent="."]
+position = Vector2(0, -35)
 collision_layer = 128
 
 [node name="EnemyAttackAreaShape" type="CollisionShape2D" parent="EnemyAttackArea"]
@@ -462,6 +466,7 @@ disabled = true
 debug_color = Color(0.933333, 0.235294, 0.25098, 0.0588235)
 
 [node name="PossibleEnemyAttackArea" type="Area2D" parent="."]
+position = Vector2(0, -35)
 collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossibleEnemyAttackArea"]
