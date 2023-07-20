@@ -6,13 +6,13 @@ extends CharacterBody2D
 @onready var texture: Sprite2D = get_node("Texture")
 @onready var dust: GPUParticles2D = get_node("Dust")
 
-var value: int = 25
+var attack_damage: int = 25
 
 @export var move_speed: float = 256.0
 @export var player_damage: int = 20
 @export var player_health: int = 100
 @onready var can_attack: bool = true
-@onready var can_die: bool = false
+@onready var is_dead: bool = false
 
 func _ready():
 	if Global.flip_mode == true:
@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 	# print(can_attack)
 	
 	if (
-		can_attack == false or can_die
+		can_attack == false or is_dead
 		):
 		return
 	
@@ -96,7 +96,7 @@ func _on_animation_finished(anim_name: String):
 
 func on_attack_area(body):
 	print(body)
-	body.update_health(value)
+	body.update_health(attack_damage)
 	
 func update_health(value: int) -> void:
 	player_health -= value
@@ -105,7 +105,7 @@ func update_health(value: int) -> void:
 	get_tree().call_group("level", "update_health", player_health)
 	
 	if player_health <= 0:
-		can_die = true
+		is_dead = true
 		animation.play("death")
 		
 		attack_area_collision.set_deferred("disabled", true)

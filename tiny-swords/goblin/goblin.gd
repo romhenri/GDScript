@@ -11,7 +11,7 @@ const OFFSET: Vector2 = Vector2(0, 31)
 @onready var aux_animation: AnimationPlayer = get_node("AuxAnimation")
 @onready var texture: Sprite2D = get_node("Texture")
 
-var can_die : bool = false
+var is_dead : bool = false
 var health : int = 100
 
 @export var distance_threshold: int = 60
@@ -26,16 +26,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	if can_die:
+	if is_dead:
 		return
 	
-	if player_ref == null or player_ref.can_die:
+	if player_ref == null or player_ref.is_dead:
 		velocity = Vector2.ZERO
 		animate()
 		return
-	
-	# print("Has Player Ref")
-	# print(player_ref.global_position)
 	
 	var direction: Vector2 = global_position.direction_to(player_ref.global_position)
 	var distance: float = global_position.distance_to(player_ref.global_position)
@@ -96,13 +93,14 @@ func _on_animatio_finished(anim_name):
 
 func update_health(value: int) -> void:
 	health -= value
-	
 	aux_animation.play("hit")
 	
 	if health <= 0:
-		can_die = true
+		is_dead = true
 		animation.play("death")
 		#queue_free()
 		get_tree().call_group("level", "increase_kill_count")
 		detect_area.set_deferred("disabled", true)
 		collision.set_deferred("disabled", true)
+	
+	return

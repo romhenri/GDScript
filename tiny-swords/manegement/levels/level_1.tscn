@@ -281,7 +281,7 @@ collision_mask = 6
 
 [node name="goblin" parent="." instance=ExtResource("6_0mq3o")]
 position = Vector2(848, 322)
-collision_mask = 5
+collision_mask = 117
 enemy_move_speed = 196.0
 
 [node name="Interface" parent="." instance=ExtResource("7_65u1a")]

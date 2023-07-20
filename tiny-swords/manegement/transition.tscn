@@ -64,7 +64,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 scale = Vector2(1.68, 1.68)
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.207843, 0, 0.211765, 1)
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 autoplay = "fade_out"
