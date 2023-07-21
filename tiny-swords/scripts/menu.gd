@@ -10,9 +10,12 @@ func on_button_pressed(button_name: String) -> void:
 	
 	match button_name:
 		"Start":
-			print("Start")
 			transition.scene_path = "res://tiny-swords/manegement/levels/level_1.tscn"
 			transition.fade_in()
-			
+		
+		"Menu":
+			transition.scene_path = "res://tiny-swords/manegement/menu.tscn"
+			transition.fade_in()
+		
 		"Quit":
 			get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nsug166ya87p"]
+[gd_scene load_steps=8 format=3 uid="uid://nsug166ya87p"]
 
 [ext_resource type="Texture2D" uid="uid://0f8evho0kt23" path="res://tiny-swords/assets/Terrain/Decorations/Tree.png" id="1_cwx5b"]
 
@@ -38,6 +38,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3xon"]
+size = Vector2(36, 15)
+
 [node name="Tree" type="AnimatedSprite2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -45,3 +48,11 @@ sprite_frames = SubResource("SpriteFrames_x0epl")
 autoplay = "default"
 frame_progress = 0.539535
 offset = Vector2(0, -80)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, -7.5)
+collision_layer = 8
+collision_mask = 255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c3xon")

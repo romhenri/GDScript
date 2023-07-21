@@ -249,6 +249,8 @@ position = Vector2(53, -312)
 [node name="Tree18" parent="Decoration" instance=ExtResource("2_bav07")]
 position = Vector2(520, -460)
 
+[node name="DecorationWater" type="Node2D" parent="."]
+
 [node name="Terrain" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
