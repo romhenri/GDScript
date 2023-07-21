@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://djuygp137ug25"]
+
+[ext_resource type="PackedScene" uid="uid://o5c06akwoefx" path="res://tiny-swords/manegement/levels/level_2.tscn" id="1_4k065"]
+[ext_resource type="PackedScene" uid="uid://7lv2500no7eh" path="res://tiny-swords/goblin/goblin.tscn" id="2_2icjw"]
+
+[node name="Level" instance=ExtResource("1_4k065")]
+target_kill_count = 10
+next_level_scene_path = "res://tiny-swords/manegement/credits.tscn"
+current_level_scene_path = "res://tiny-swords/manegement/levels/level_3.tscn"
+
+[node name="goblin2" parent="." index="4"]
+scale = Vector2(1.04479, 0.973317)
+
+[node name="goblin4" parent="." index="8" instance=ExtResource("2_2icjw")]
+position = Vector2(622.431, -311.709)
+
+[node name="goblin5" parent="." index="9" instance=ExtResource("2_2icjw")]
+position = Vector2(1422.12, -74.597)
+
+[node name="goblin6" parent="." index="10" instance=ExtResource("2_2icjw")]
+position = Vector2(1034.36, 805.47)
+
+[node name="goblin7" parent="." index="11" instance=ExtResource("2_2icjw")]
+position = Vector2(1659.82, 479.552)
+
+[node name="goblin8" parent="." index="12" instance=ExtResource("2_2icjw")]
+position = Vector2(-486.463, 422.717)
+
+[node name="goblin9" parent="." index="13" instance=ExtResource("2_2icjw")]
+position = Vector2(783.578, 476.888)
+
+[node name="goblin10" parent="." index="14" instance=ExtResource("2_2icjw")]
+position = Vector2(475.384, 938.679)
