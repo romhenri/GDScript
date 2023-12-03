@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const AUDIO_TEMPLATE: PackedScene = preload("res://tiny-swords/manegement/audio_template.tscn")
-const ATTACK_AREA: PackedScene = preload("res://tiny-swords/goblin/EnemyAttackArea.tscn")
+const AUDIO_TEMPLATE: PackedScene = preload("res://manegement/audio_template.tscn")
+const ATTACK_AREA: PackedScene = preload("res://goblin/EnemyAttackArea.tscn")
 const OFFSET: Vector2 = Vector2(0, 31)
 
 var player_ref: CharacterBody2D = null
@@ -118,9 +118,9 @@ var body_on: bool = false
 
 func attack_sound():
 	if body_on:
-		spawn_sfx("res://tiny-swords/assets/sfx/11_human_damage_1.wav")
+		spawn_sfx("res://assets/sfx/11_human_damage_1.wav")
 	elif !body_on:
-		spawn_sfx("res://tiny-swords/assets/sfx/27_sword_miss_2.wav")
+		spawn_sfx("res://assets/sfx/27_sword_miss_2.wav")
 
 func _on_possible_enemy_attack_area_body_entered(_body):
 	body_on = true

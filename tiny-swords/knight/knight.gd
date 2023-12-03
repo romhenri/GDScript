@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const AUDIO_TEMPLATE: PackedScene = preload("res://tiny-swords/manegement/audio_template.tscn")
+const AUDIO_TEMPLATE: PackedScene = preload("res://manegement/audio_template.tscn")
 
 @onready var attack_area_collision: CollisionShape2D = get_node("AttackArea/Collision")
 @onready var animation: AnimationPlayer = get_node("Animation")

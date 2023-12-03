@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://6o6i05t72doe"]
 
-[ext_resource type="Script" path="res://tiny-swords/knight/knight.gd" id="1_qjant"]
-[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://tiny-swords/assets/Factions/Knights/Warrior.png" id="2_bkvpy"]
-[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://tiny-swords/manegement/dust.tscn" id="3_aibbk"]
+[ext_resource type="Script" path="res://knight/knight.gd" id="1_4m0jg"]
+[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://assets/Factions/Knights/Warrior.png" id="2_bkvpy"]
+[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://manegement/dust.tscn" id="3_aibbk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui7si"]
 size = Vector2(48, 23.5)
@@ -175,7 +175,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["res://tiny-swords/assets/sfx/26_sword_hit_1.wav"],
+"args": ["res://assets/sfx/26_sword_hit_1.wav"],
 "method": &"spawn_sfx"
 }]
 }
@@ -353,10 +353,10 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": ["res://tiny-swords/assets/sfx/16_human_walk_stone_1.wav"],
+"args": ["res://assets/sfx/16_human_walk_stone_1.wav"],
 "method": &"spawn_sfx"
 }, {
-"args": ["res://tiny-swords/assets/sfx/16_human_walk_stone_3.wav"],
+"args": ["res://assets/sfx/16_human_walk_stone_3.wav"],
 "method": &"spawn_sfx"
 }]
 }
@@ -457,7 +457,7 @@ z_as_relative = false
 y_sort_enabled = true
 scale = Vector2(0.965751, 1.00262)
 collision_mask = 255
-script = ExtResource("1_qjant")
+script = ExtResource("1_4m0jg")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.97909)

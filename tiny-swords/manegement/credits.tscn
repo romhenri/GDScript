@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://c8fmv4qwe6bh3"]
 
-[ext_resource type="Script" path="res://tiny-swords/scripts/menu.gd" id="1_u7xuj"]
-[ext_resource type="Script" path="res://tiny-swords/scripts/Terrain.gd" id="2_4c706"]
-[ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png" id="3_8a1e7"]
-[ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://tiny-swords/assets/Terrain/Water/Water.png" id="4_ehfqe"]
-[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://tiny-swords/assets/kurland.ttf" id="5_xjoop"]
-[ext_resource type="Script" path="res://tiny-swords/knight/knight.gd" id="6_7h0hr"]
-[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://tiny-swords/assets/Factions/Knights/Warrior.png" id="7_joen0"]
-[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://tiny-swords/manegement/dust.tscn" id="8_dpw55"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_w3qe8"]
+[ext_resource type="Script" path="res://scripts/Terrain.gd" id="2_4c706"]
+[ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://assets/Terrain/Ground/Grass_Flat.png" id="3_8a1e7"]
+[ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://assets/Terrain/Water/Water.png" id="4_ehfqe"]
+[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://assets/kurland.ttf" id="5_xjoop"]
+[ext_resource type="Script" path="res://knight/knight.gd" id="6_7h0hr"]
+[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://assets/Factions/Knights/Warrior.png" id="7_joen0"]
+[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://manegement/dust.tscn" id="8_dpw55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh5rj"]
 texture = ExtResource("3_8a1e7")
@@ -614,7 +614,7 @@ offset_right = -546.0
 offset_bottom = -291.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u7xuj")
+script = ExtResource("1_w3qe8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

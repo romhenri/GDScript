@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dkl2k74l1umf1"
-path="res://.godot/imported/22_orc_jump_1.wav-dd863a504b51506aa145ba7876cdf732.sample"
+path="res://.godot/imported/22_orc_jump_1.wav-e325e4b98739c5a183123f13890d3874.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/22_orc_jump_1.wav"
-dest_files=["res://.godot/imported/22_orc_jump_1.wav-dd863a504b51506aa145ba7876cdf732.sample"]
+source_file="res://assets/sfx/22_orc_jump_1.wav"
+dest_files=["res://.godot/imported/22_orc_jump_1.wav-e325e4b98739c5a183123f13890d3874.sample"]
 
 [params]
 

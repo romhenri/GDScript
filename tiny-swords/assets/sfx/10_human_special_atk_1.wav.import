@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://w0m781xm82cg"
-path="res://.godot/imported/10_human_special_atk_1.wav-c9eef6d63e767e74d43b153fc3b26fb9.sample"
+path="res://.godot/imported/10_human_special_atk_1.wav-9ce20f3cff90908d1b6aeafc0035b4fc.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/10_human_special_atk_1.wav"
-dest_files=["res://.godot/imported/10_human_special_atk_1.wav-c9eef6d63e767e74d43b153fc3b26fb9.sample"]
+source_file="res://assets/sfx/10_human_special_atk_1.wav"
+dest_files=["res://.godot/imported/10_human_special_atk_1.wav-9ce20f3cff90908d1b6aeafc0035b4fc.sample"]
 
 [params]
 

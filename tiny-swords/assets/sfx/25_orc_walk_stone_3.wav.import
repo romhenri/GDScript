@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cieqdjlsygbav"
-path="res://.godot/imported/25_orc_walk_stone_3.wav-bf32cadb424fde3f46483a5a4e26895a.sample"
+path="res://.godot/imported/25_orc_walk_stone_3.wav-c620883595ce9a905dd780bdb5d604fd.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/25_orc_walk_stone_3.wav"
-dest_files=["res://.godot/imported/25_orc_walk_stone_3.wav-bf32cadb424fde3f46483a5a4e26895a.sample"]
+source_file="res://assets/sfx/25_orc_walk_stone_3.wav"
+dest_files=["res://.godot/imported/25_orc_walk_stone_3.wav-c620883595ce9a905dd780bdb5d604fd.sample"]
 
 [params]
 
