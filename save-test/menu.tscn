@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://djitsepsj8rsm"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_o7gwi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37gvn"]
+bg_color = Color(0.294118, 0.52549, 0.733333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c78rl"]
+bg_color = Color(0.223529, 0.513726, 0.835294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncckr"]
+bg_color = Color(0.254902, 0.411765, 0.658824, 1)
+
+[sub_resource type="Theme" id="Theme_86hub"]
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_37gvn")
+Button/styles/normal = SubResource("StyleBoxFlat_c78rl")
+Button/styles/pressed = SubResource("StyleBoxFlat_ncckr")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00146, 1)
+script = ExtResource("1_o7gwi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.7773, 16.2283)
+color = Color(0.482353, 0.658824, 0.843137, 1)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 265.0
+offset_right = 750.0
+offset_bottom = 296.0
+
+[node name="Save_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 265.0
+offset_right = 850.0
+offset_bottom = 294.0
+theme = SubResource("Theme_86hub")
+text = "Save
+"
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 258.0
+offset_top = 310.0
+offset_right = 349.0
+offset_bottom = 339.0
+theme = SubResource("Theme_86hub")
+text = "Load
+"
+
+[node name="LoadedData" type="Label" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 312.0
+offset_right = 850.0
+offset_bottom = 339.0
+scale = Vector2(0.995067, 1.0116)
+theme_override_colors/font_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+vertical_alignment = 1
+
+[connection signal="pressed" from="Save_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_button_load_pressed"]
