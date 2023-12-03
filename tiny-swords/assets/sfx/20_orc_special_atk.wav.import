@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bnccl2mwoegaa"
-path="res://.godot/imported/20_orc_special_atk.wav-5011b2959c4fc98bd27289f2c7f5e75a.sample"
+path="res://.godot/imported/20_orc_special_atk.wav-ccc105b00d01ecc77a1e3c8544fd5d9f.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/20_orc_special_atk.wav"
-dest_files=["res://.godot/imported/20_orc_special_atk.wav-5011b2959c4fc98bd27289f2c7f5e75a.sample"]
+source_file="res://assets/sfx/20_orc_special_atk.wav"
+dest_files=["res://.godot/imported/20_orc_special_atk.wav-ccc105b00d01ecc77a1e3c8544fd5d9f.sample"]
 
 [params]
 

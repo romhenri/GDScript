@@ -1,6 +1,6 @@
 extends Node2D
 
-const FOAM: PackedScene = preload("res://tiny-swords/manegement/foam.tscn")
+const FOAM: PackedScene = preload("res://manegement/foam.tscn")
 
 @onready var grass_tilemap: TileMap = get_node("Grass")
 @onready var water_tilemap: TileMap = get_node("Water")

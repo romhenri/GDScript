@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=3 uid="uid://bww6jo7l7tau1"]
 
-[ext_resource type="Script" path="res://tiny-swords/scripts/menu.gd" id="1_33nuo"]
-[ext_resource type="Script" path="res://tiny-swords/scripts/Terrain.gd" id="2_d5jww"]
-[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://tiny-swords/assets/kurland.ttf" id="2_heofy"]
-[ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png" id="4_bgi1r"]
-[ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://tiny-swords/assets/Terrain/Water/Water.png" id="5_xgts2"]
-[ext_resource type="Script" path="res://tiny-swords/knight/knight.gd" id="6_5m446"]
-[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://tiny-swords/assets/Factions/Knights/Warrior.png" id="7_nkial"]
-[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://tiny-swords/manegement/dust.tscn" id="8_jntv0"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_q4fur"]
+[ext_resource type="Script" path="res://scripts/Terrain.gd" id="2_d5jww"]
+[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://assets/kurland.ttf" id="2_heofy"]
+[ext_resource type="Texture2D" uid="uid://dkybtubqqh60i" path="res://assets/Terrain/Ground/Grass_Flat.png" id="4_bgi1r"]
+[ext_resource type="Texture2D" uid="uid://bgqwf5ol0j0ui" path="res://assets/Terrain/Water/Water.png" id="5_xgts2"]
+[ext_resource type="Script" path="res://knight/knight.gd" id="6_5m446"]
+[ext_resource type="Texture2D" uid="uid://e4j5u3muukit" path="res://assets/Factions/Knights/Warrior.png" id="7_nkial"]
+[ext_resource type="PackedScene" uid="uid://bdb7vbrm5n4n4" path="res://manegement/dust.tscn" id="8_jntv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh5rj"]
 texture = ExtResource("4_bgi1r")
@@ -610,11 +610,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -546.0
-offset_bottom = -291.0
+offset_left = -16.0
+offset_top = -18.0
+offset_right = -562.0
+offset_bottom = -309.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_33nuo")
+script = ExtResource("1_q4fur")
 
 [node name="Terrain" type="Node2D" parent="."]
 position = Vector2(49, 115)

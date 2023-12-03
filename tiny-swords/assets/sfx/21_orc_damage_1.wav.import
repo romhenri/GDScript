@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://lf0xmcboor0g"
-path="res://.godot/imported/21_orc_damage_1.wav-ba12d7bab6d7b4de3c518323f9f6a026.sample"
+path="res://.godot/imported/21_orc_damage_1.wav-d7bbded120ec8a70fdfdaec73e785606.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/21_orc_damage_1.wav"
-dest_files=["res://.godot/imported/21_orc_damage_1.wav-ba12d7bab6d7b4de3c518323f9f6a026.sample"]
+source_file="res://assets/sfx/21_orc_damage_1.wav"
+dest_files=["res://.godot/imported/21_orc_damage_1.wav-d7bbded120ec8a70fdfdaec73e785606.sample"]
 
 [params]
 

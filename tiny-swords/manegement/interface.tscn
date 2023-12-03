@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://7w2jutx1vw7j"]
 
-[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://tiny-swords/assets/kurland.ttf" id="1_levey"]
+[ext_resource type="FontFile" uid="uid://bmwmshpq8k8sr" path="res://assets/kurland.ttf" id="1_levey"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ax0qm"]
 font = ExtResource("1_levey")

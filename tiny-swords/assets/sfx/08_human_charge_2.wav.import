@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c4miqp1p5hgyj"
-path="res://.godot/imported/08_human_charge_2.wav-0b6cde30aec108554116189cb48d8b57.sample"
+path="res://.godot/imported/08_human_charge_2.wav-2c4ea94b76524d032f22aa01f2d098fe.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/08_human_charge_2.wav"
-dest_files=["res://.godot/imported/08_human_charge_2.wav-0b6cde30aec108554116189cb48d8b57.sample"]
+source_file="res://assets/sfx/08_human_charge_2.wav"
+dest_files=["res://.godot/imported/08_human_charge_2.wav-2c4ea94b76524d032f22aa01f2d098fe.sample"]
 
 [params]
 

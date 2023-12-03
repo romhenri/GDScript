@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://xk87gqe6gr2y"
-path="res://.godot/imported/05_door_open_2.mp3-2f769bdeafe284a9f94e01077a1ab97b.mp3str"
+path="res://.godot/imported/05_door_open_2.mp3-b158a365346d1e4c754fb40eb004a6ac.mp3str"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/05_door_open_2.mp3"
-dest_files=["res://.godot/imported/05_door_open_2.mp3-2f769bdeafe284a9f94e01077a1ab97b.mp3str"]
+source_file="res://assets/sfx/05_door_open_2.mp3"
+dest_files=["res://.godot/imported/05_door_open_2.mp3-b158a365346d1e4c754fb40eb004a6ac.mp3str"]
 
 [params]
 

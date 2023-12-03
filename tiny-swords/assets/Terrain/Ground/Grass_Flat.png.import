@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkybtubqqh60i"
-path="res://.godot/imported/Grass_Flat.png-5059f26897df4bf228f54dedfcc9fb0d.ctex"
+path="res://.godot/imported/Grass_Flat.png-09c36f1feba428d018c4d84e1f3e1c50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiny-swords/assets/Terrain/Ground/Grass_Flat.png"
-dest_files=["res://.godot/imported/Grass_Flat.png-5059f26897df4bf228f54dedfcc9fb0d.ctex"]
+source_file="res://assets/Terrain/Ground/Grass_Flat.png"
+dest_files=["res://.godot/imported/Grass_Flat.png-09c36f1feba428d018c4d84e1f3e1c50.ctex"]
 
 [params]
 

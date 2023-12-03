@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dur3bpx5qtmp3"]
 
-[ext_resource type="Script" path="res://tiny-swords/scripts/transition.gd" id="1_x21cj"]
-[ext_resource type="AudioStream" uid="uid://d3tlh6fsg57yg" path="res://tiny-swords/assets/music/Goblins_Dance_(Battle).wav" id="2_m13rn"]
+[ext_resource type="Script" path="res://scripts/transition.gd" id="1_b32im"]
+[ext_resource type="AudioStream" uid="uid://d3tlh6fsg57yg" path="res://assets/music/Goblins_Dance_(Battle).wav" id="2_m13rn"]
 
 [sub_resource type="Animation" id="Animation_2ftsh"]
 length = 0.001
@@ -56,7 +56,7 @@ _data = {
 }
 
 [node name="Trasition" type="CanvasLayer"]
-script = ExtResource("1_x21cj")
+script = ExtResource("1_b32im")
 
 [node name="Rect" type="ColorRect" parent="."]
 z_index = 100

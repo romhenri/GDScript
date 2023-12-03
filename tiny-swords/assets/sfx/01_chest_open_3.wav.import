@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c0u6k7o3b36pc"
-path="res://.godot/imported/01_chest_open_3.wav-7816a7e58339d9de2fad007d9eb02831.sample"
+path="res://.godot/imported/01_chest_open_3.wav-5bc7ea2fa7f68336a9858517490f0a95.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/sfx/01_chest_open_3.wav"
-dest_files=["res://.godot/imported/01_chest_open_3.wav-7816a7e58339d9de2fad007d9eb02831.sample"]
+source_file="res://assets/sfx/01_chest_open_3.wav"
+dest_files=["res://.godot/imported/01_chest_open_3.wav-5bc7ea2fa7f68336a9858517490f0a95.sample"]
 
 [params]
 

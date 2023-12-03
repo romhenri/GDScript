@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3tlh6fsg57yg"
-path="res://.godot/imported/Goblins_Dance_(Battle).wav-1be55746623516f403a269773b520dcb.sample"
+path="res://.godot/imported/Goblins_Dance_(Battle).wav-9655ea99e7f4e4fa6626f472c59bbcdf.sample"
 
 [deps]
 
-source_file="res://tiny-swords/assets/music/Goblins_Dance_(Battle).wav"
-dest_files=["res://.godot/imported/Goblins_Dance_(Battle).wav-1be55746623516f403a269773b520dcb.sample"]
+source_file="res://assets/music/Goblins_Dance_(Battle).wav"
+dest_files=["res://.godot/imported/Goblins_Dance_(Battle).wav-9655ea99e7f4e4fa6626f472c59bbcdf.sample"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://7lv2500no7eh"]
 
-[ext_resource type="Texture2D" uid="uid://vrt15i8ngrj3" path="res://tiny-swords/assets/Factions/Goblins/Torch.png" id="1_v7idk"]
-[ext_resource type="Script" path="res://tiny-swords/goblin/goblin.gd" id="2_jxqmu"]
-[ext_resource type="Texture2D" uid="uid://bn0eyjdml66fs" path="res://tiny-swords/assets/Dead_and_Fire/Dead/Dead.png" id="3_26dau"]
+[ext_resource type="Texture2D" uid="uid://vrt15i8ngrj3" path="res://assets/Factions/Goblins/Torch.png" id="1_v7idk"]
+[ext_resource type="Script" path="res://goblin/goblin.gd" id="2_jxqmu"]
+[ext_resource type="Texture2D" uid="uid://bn0eyjdml66fs" path="res://assets/Dead_and_Fire/Dead/Dead.png" id="3_26dau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_amdb5"]
 radius = 361.012
@@ -378,10 +378,10 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": ["res://tiny-swords/assets/sfx/25_orc_walk_stone_1.wav"],
+"args": ["res://assets/sfx/25_orc_walk_stone_1.wav"],
 "method": &"spawn_sfx"
 }, {
-"args": ["res://tiny-swords/assets/sfx/25_orc_walk_stone_2.wav"],
+"args": ["res://assets/sfx/25_orc_walk_stone_2.wav"],
 "method": &"spawn_sfx"
 }]
 }

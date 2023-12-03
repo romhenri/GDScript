@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vmyvtanef078"
-path="res://.godot/imported/dust.png-f44f277e21d0cf87ec1b45d5481f608e.ctex"
+path="res://.godot/imported/dust.png-8de900a4d620f6d3f2d6aed43df1801b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiny-swords/assets/dust.png"
-dest_files=["res://.godot/imported/dust.png-f44f277e21d0cf87ec1b45d5481f608e.ctex"]
+source_file="res://assets/dust.png"
+dest_files=["res://.godot/imported/dust.png-8de900a4d620f6d3f2d6aed43df1801b.ctex"]
 
 [params]
 
