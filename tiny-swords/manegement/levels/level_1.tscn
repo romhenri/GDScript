@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://juqddi80lmd6"]
+[gd_scene load_steps=27 format=3 uid="uid://juqddi80lmd6"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_2w4ce"]
 [ext_resource type="PackedScene" uid="uid://nsug166ya87p" path="res://manegement/tree.tscn" id="2_bav07"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://l0dlbmtf0u0y" path="res://assets/Terrain/Decorations/Mushroom_01.png" id="8_cc56t"]
 [ext_resource type="Texture2D" uid="uid://dfqvrp76hmdqd" path="res://assets/Terrain/Decorations/Mushroom_02.png" id="9_fi078"]
 [ext_resource type="Texture2D" uid="uid://ig886f273dom" path="res://assets/Terrain/Decorations/Mushroom_03.png" id="10_1nabo"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/scripts/virtual_joystick.gd" id="15_eqs1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uh5rj"]
 texture = ExtResource("3_g7e37")
@@ -286,3 +287,19 @@ position = Vector2(848, 322)
 collision_mask = 117
 
 [node name="Interface" parent="." instance=ExtResource("7_65u1a")]
+
+[node name="VirtualJoystick" type="Node2D" parent="Interface"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(205, 866)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("15_eqs1j")
+
+[node name="Button" type="Button" parent="Interface"]
+offset_left = 1577.0
+offset_top = 786.0
+offset_right = 1852.0
+offset_bottom = 922.0
+text = "Attack"
+
+[connection signal="analogic_chage" from="Interface/VirtualJoystick" to="knight" method="_on_virtual_joystick_analogic_chage"]
+[connection signal="button_down" from="Interface/Button" to="knight" method="_on_button_button_down"]

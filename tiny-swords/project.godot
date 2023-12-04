@@ -24,7 +24,12 @@ transition="*res://manegement/transition.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
+window/emulate_touch_from_mouse=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/virtual_joystick/plugin.cfg")
 
 [input]
 
@@ -64,6 +69,10 @@ attack={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

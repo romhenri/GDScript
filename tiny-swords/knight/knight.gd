@@ -8,11 +8,14 @@ const AUDIO_TEMPLATE: PackedScene = preload("res://manegement/audio_template.tsc
 @onready var texture: Sprite2D = get_node("Texture")
 @onready var dust: GPUParticles2D = get_node("Dust")
 
+@onready var direction: Vector2 = Vector2.ZERO
 @export var move_speed: float = 256.0
 @export var player_damage: int = 20
 @export var player_health: int = 100
 @onready var can_attack: bool = true
 @onready var is_dead: bool = false
+
+@export var is_mobile: bool = false
 
 func _ready():
 	if Global.flip_mode == true:
@@ -31,19 +34,19 @@ func _physics_process(_delta: float) -> void:
 		can_attack == false or is_dead
 		):
 		return
-	
+		
+	if !is_mobile:
+		direction = get_direction();
 	
 	move()
 	animate()
 	attack_handler()
-
 
 # Move System #
 func move() -> void:
 	if can_attack == false:
 		return
 	
-	var direction: Vector2 = get_direction()
 	# print(direction)
 	velocity = direction * move_speed
 	move_and_slide()
@@ -55,8 +58,6 @@ func get_direction() -> Vector2:
 	Input.get_axis("move_left", "move_right"),
 	Input.get_axis("move_up", "move_down")
 	).normalized()
-
-#
 
 # Animation System #
 func animate() -> void:
@@ -114,3 +115,12 @@ func spawn_sfx(sfx_path: String) -> void:
 	var sfx = AUDIO_TEMPLATE.instantiate()
 	sfx.sfx_to_play = sfx_path
 	add_child(sfx)
+
+func _on_virtual_joystick_analogic_chage(joystick_direction):
+	is_mobile = true
+	direction = joystick_direction
+
+func _on_button_button_down():
+	dust.emitting = false
+	can_attack = false
+	animation.play("attack")
